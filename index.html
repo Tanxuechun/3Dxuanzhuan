@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			
+			#main{
+				perspective: 1000px;
+			}
+			#view{
+				width: 200px;
+				height: 200px;
+				margin: 200PX auto;
+				position: relative;
+				transform-style:preserve-3d ;
+				transition:all 1s;
+				/*animation: a1 linear 10s infinite;*/
+				@keyframes a1{
+				from{transform: rotateX(0deg) rotateY(0deg);}
+				to{transform: rotateX(360deg) rotateY(360deg);}
+			}
+			}
+			#view div{
+				width:200px;
+				height: 200px;
+				background-size:100% 100%;
+				position: absolute;
+				left:0px;
+				top:0px;
+				opacity: 0.6;
+				box-shadow: 0px 0px 60px #ccc;
+				
+			}
+			#front{
+				background-image: url(img/09-43-47-52-13.jpg);
+				transform: translateZ(100px);
+			}
+			#back{
+				background-image: url(img/12619874.jpg);
+				transform: rotateY(180deg) translateZ(100px);
+			}
+			#left{
+				background-image: url(img/12915855.jpg);
+				transform: rotateY(90deg) translateZ(100px);
+			}
+			#right{
+				background-image: url(img/12918622.jpg);
+				transform: rotateY(-90deg) translateZ(100px);
+			}
+			#top{
+				background-image: url(img/20150910152027_hvPVH.jpeg);
+				transform:  rotateX(90deg) translateZ(100px);
+			}
+			#button{
+				background-image: url(img/20150910152121_BRU2L.jpeg);
+				transform:  rotateX(-90deg) translateZ(100px);
+			}
+			#xz1:checked ~#main #view{
+				transform: rotateX(10deg) rotateY(10deg) rotateZ(0deg);
+			}
+			#xz2:checked ~#main #view{
+				transform: rotateX(10deg) rotateY(10deg) rotateZ(180deg);
+			}
+			#xz3:checked ~#main #view{
+				transform: rotateX(10deg) rotateY(-180deg) rotateZ(90deg);
+			}
+			#xz4:checked ~#main #view{
+				transform: rotateX(-90deg) rotateY(10deg) rotateZ(0deg);
+			}
+			#xz5:checked ~#main #view{
+				transform: rotateX(10deg) rotateY(10deg) rotateZ(180deg);
+			}
+			#xz6:checked ~#main #view{
+				transform: rotateX(10deg) rotateY(10deg) rotateZ(0deg);
+			}
+			#xz7:checked ~#main #view{
+				transform: scale(1.5);
+			}
+			label{
+				width:100px;
+				height: 60px;
+				padding:10px;
+				/*border: solid 1px #000;*/
+				font-size: 20px ;
+				color:#000000;
+				font-size: ;
+				position: relative;
+				left:450px;
+				top:100px;
+			}
+			input{
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="atn">
+			<label for="xz1" id="label1">正面</label>
+			<label for="xz2" id="label2">背面</label>
+			<label for="xz3" id="label3">左面</label>
+			<label for="xz4" id="label4">右面</label>
+			<label for="xz5" id="label5">上面</label>
+			<label for="xz6" id="label6">下面</label>
+			<label for="xz7" id="label7">放大</label>
+			</div>
+		
+			<input type="radio" name="xz" id="xz1" value="" />
+			<input type="radio" name="xz" id="xz2" value="" />
+			<input type="radio" name="xz" id="xz3" value="" />
+			<input type="radio" name="xz" id="xz4" value="" />
+			<input type="radio" name="xz" id="xz5" value="" />
+			<input type="radio" name="xz" id="xz6" value="" />
+			<input type="radio" name="xz" id="xz7" value="" />
+		
+		<div id="main">
+			<div id="view">
+			<div id="front"></div>
+			<div id="back"></div>
+			<div id="left"></div>
+			<div id="right"></div>
+			<div id="top"></div>
+			<div id="button"></div>
+		</div>
+		</div>
+		
+	</body>
+</html>
